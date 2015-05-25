@@ -39,11 +39,11 @@ public class MainActivity extends Activity {
         // store it to sd card
         //outputFile="/mnt/sdcard/Recording.3gpp";
         outputFile = Environment.getExternalStorageDirectory().
-                getAbsolutePath() + "/Recording.3gpp";
+                getAbsolutePath() + "/Recording.mp4";
 
         myRecorder = new MediaRecorder();
         myRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        myRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        myRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         myRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         myRecorder.setOutputFile(outputFile);
 
@@ -239,10 +239,10 @@ public class MainActivity extends Activity {
         if (!isSet) {
             if (o != null)
                 outputFile = Environment.getExternalStorageDirectory().
-                        getAbsolutePath() + "/" + o + ".3gpp";
+                        getAbsolutePath() + "/" + o + ".mp4";
             else
                 outputFile = Environment.getExternalStorageDirectory().
-                        getAbsolutePath() + "/recording.3gpp";
+                        getAbsolutePath() + "/recording.mp4";
             myRecorder.setOutputFile(outputFile);
             isSet = true;
         }
